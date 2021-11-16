@@ -47,8 +47,8 @@ class CompanyController extends Controller
 
         $company = Company::create($request->all());
 
-        if($request->hasFile('Img')){
-            $company['Img']=$request->file('Img')->store('upLoads', 'public');
+        if($request->hasFile('img')){
+            $company['img']=$request->file('img')->store('upLoads', 'public');
         }
 
         return redirect()->route('companies.index')
